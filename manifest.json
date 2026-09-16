@@ -1,0 +1,16 @@
+{
+  "name": "Team Walkup Songs",
+  "short_name": "Walkup",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#10172a",
+  "theme_color": "#10172a",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://via.placeholder.com/512.png?text=⚾",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

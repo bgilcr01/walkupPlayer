@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Team Walkup Songs</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1a202c">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #10172a;
+      color: #ffffff;
+      padding: 16px;
+      padding-bottom: 120px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 16px;
+      font-size: 1.5rem;
+      color: #38bdf8;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 12px;
+    }
+    .card {
+      background-color: #1e293b;
+      border: 2px solid #334155;
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.15s ease, transform 0.1s ease;
+    }
+    .card:active { transform: scale(0.96); }
+    .card.active {
+      background-color: #166534;
+      border-color: #22c55e;
+      box-shadow: 0 0 12px rgba(34, 197, 94, 0.4);
+    }
+    .number {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #f59e0b;
+    }
+    .name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+    /* Fixed Control Bar at Bottom */
+    .controls {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: #0f172a;
+      border-top: 2px solid #334155;
+      padding: 16px;
+      display: flex;
+      gap: 12px;
+      z-index: 100;
+    }
+    .btn {
+      flex: 1;
+      padding: 18px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .btn-stop { background-color: #ef4444; color: white; }
+    .btn-fade { background-color: #eab308; color: black; }
+    .btn:active { opacity: 0.8; }
+  </style>
+</head>
+<body>
+
+  <h1>⚾ CHIEFS WALKUP SONGS</h1>
+  
+  <div class="grid" id="roster-grid">
+    <!-- Buttons dynamically inserted here -->
+  </div>
+
+  <div class="controls">
+    <button class="btn btn-fade" id="fade-btn">FADE OUT</button>
+    <button class="btn btn-stop" id="stop-btn">STOP</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
