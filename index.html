@@ -7,97 +7,184 @@
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#1a202c">
   <style>
+    :root {
+      --primary-blue: #668be7;
+      --primary-red: #f60004;
+      --bg-dark: #0b0f19;
+      --card-bg: #131b2e;
+      --card-border: #1e294b;
+      --text-main: #ffffff;
+      --text-muted: #94a3b8;
+    }
+
     * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; }
+    
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: #10172a;
-      color: #ffffff;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
       padding: 16px;
-      padding-bottom: 120px;
+      padding-bottom: 130px;
     }
-    h1 {
-      display:inline;
-      text-align: center;
+
+    /* Logo Header Styles */
+    .header-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       margin-bottom: 16px;
-      font-size: 3rem;
-      color: #ffc700;
     }
-    h2 {
+
+    .logo-placeholder {
+      width: 100px;
+      height: 100px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #1e294b, var(--card-bg));
+      border: 3px solid var(--primary-blue);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(102, 139, 231, 0.25);
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .logo-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .logo-placeholder span {
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
       text-align: center;
-      margin-top: 32px;
-      margin-bottom: 32px;
-      font-size: 1.5rem;
-      color: #94a3b8;
+      padding: 0 4px;
     }
+
+    h1 {
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: var(--text-main);
+      text-transform: uppercase;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    h1 span {
+      color: var(--primary-red);
+    }
+
+    /* Grid Layout */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
       gap: 12px;
+      max-width: 600px;
+      margin: 0 auto;
     }
+
+    /* Player Cards */
     .card {
-      background-color: #1e293b;
-      border: 2px solid #334155;
-      border-radius: 12px;
-      padding: 16px;
+      background-color: var(--card-bg);
+      border: 2px solid var(--card-border);
+      border-radius: 14px;
+      padding: 16px 10px;
       text-align: center;
       cursor: pointer;
-      transition: background-color 0.15s ease, transform 0.1s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transition: all 0.1s ease-in-out;
     }
-    .card:active { transform: scale(0.96); }
+
+    .card:active { 
+      transform: scale(0.95); 
+    }
+
     .card.active {
-      background-color: #166534;
-      border-color: #22c55e;
-      box-shadow: 0 0 12px rgba(34, 197, 94, 0.4);
+      background-color: rgba(246, 0, 4, 0.15);
+      border-color: var(--primary-red);
+      box-shadow: 0 0 16px rgba(246, 0, 4, 0.5);
     }
+
     .number {
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 900;
-      color: #f59e0b;
+      color: var(--primary-blue);
+      letter-spacing: -0.5px;
     }
+
     .name {
       font-size: 1.1rem;
-      font-weight: 700;
-      margin-top: 4px;
+      font-weight: 800;
+      margin-top: 2px;
+      color: var(--text-main);
     }
-    /* Fixed Control Bar at Bottom */
+
+    .card.active .number {
+      color: var(--primary-red);
+    }
+
+    /* Fixed Bottom Controls */
     .controls {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
-      background-color: #0f172a;
-      border-top: 2px solid #334155;
+      background-color: rgba(11, 15, 25, 0.95);
+      backdrop-filter: blur(8px);
+      border-top: 2px solid var(--card-border);
       padding: 16px;
       display: flex;
       gap: 12px;
+      justify-content: center;
       z-index: 100;
     }
+
     .btn {
       flex: 1;
-      padding: 18px;
-      font-size: 1.2rem;
-      font-weight: bold;
+      max-width: 280px;
+      padding: 16px;
+      font-size: 1.1rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      text-transform: uppercase;
+      transition: opacity 0.1s;
     }
-    .btn-stop { background-color: #ef4444; color: white; }
-    .btn-fade { background-color: #eab308; color: black; }
-    .btn:active { opacity: 0.8; }
 
-    .logo {
-      display: inline; 
-      margin: auto 25px 0px auto; 
-      width: 100px; 
-      height: 100px;
+    .btn-fade { 
+      background-color: var(--primary-blue); 
+      color: #ffffff; 
+    }
+
+    .btn-stop { 
+      background-color: var(--primary-red); 
+      color: #ffffff; 
+    }
+
+    .btn:active { 
+      opacity: 0.85; 
+      transform: scale(0.98); 
     }
 
   </style>
 </head>
 <body>
-  <img src="img/chiefs-small.png" class="logo" alt="Team Logo">
-  <h1> WALKUP SONGS </h1>
-  <h2>⚾ ⚾ ⚾</h2>
+  <div class="header-container">
+    <!-- 100x100px Logo Placeholder: Replace src="your-logo.png" with your actual image file when ready -->
+    <div class="logo-placeholder" id="logo-container">
+      <img src="img/chiefs-small.png" alt="Team Logo">
+    </div>
+    <h1><span>⚾</span> Team Walkup Songs</h1>
+  </div>
 
   <div class="grid" id="roster-grid">
     <!-- Buttons dynamically inserted here -->
