@@ -16,10 +16,18 @@
       padding-bottom: 120px;
     }
     h1 {
+      display:inline;
       text-align: center;
       margin-bottom: 16px;
+      font-size: 3rem;
+      color: #ffc700;
+    }
+    h2 {
+      text-align: center;
+      margin-top: 32px;
+      margin-bottom: 32px;
       font-size: 1.5rem;
-      color: #38bdf8;
+      color: #94a3b8;
     }
     .grid {
       display: grid;
@@ -76,15 +84,26 @@
     .btn-stop { background-color: #ef4444; color: white; }
     .btn-fade { background-color: #eab308; color: black; }
     .btn:active { opacity: 0.8; }
+
+    .logo {
+      display: inline; 
+      margin: auto 25px 0px auto; 
+      width: 100px; 
+      height: 100px;
+    }
+
   </style>
 </head>
 <body>
+  <img src="img/chiefs-small.png" class="logo" alt="Team Logo">
+  <h1> WALKUP SONGS </h1>
+  <h2>⚾ ⚾ ⚾</h2>
 
-  <h1>⚾ CHIEFS WALKUP SONGS</h1>
-  
   <div class="grid" id="roster-grid">
     <!-- Buttons dynamically inserted here -->
   </div>
+
+
 
   <div class="controls">
     <button class="btn btn-fade" id="fade-btn">FADE OUT</button>
