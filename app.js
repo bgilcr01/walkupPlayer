@@ -1,21 +1,21 @@
 // --- ROSTER DATA CONFIGURATION ---
 const roster = [
-  { id: 1, name: "Andrew", number: "01", file: "audio/test-andrew.mp3" },
-  { id: 2, name: "August", number: "02", file: "audio/test-august.mp3" },
-  { id: 3, name: "Bear", number: "03", file: "audio/test-bear.mp3" },
-  { id: 4, name: "Benjamin", number: "04", file: "audio/test-benjamin.mp3" },
-  { id: 5, name: "Cole", number: "05", file: "audio/test-cole.mp3" },
-  { id: 6, name: "James P", number: "06", file: "audio/test-james-p.mp3" },
-  { id: 7, name: "James R", number: "07", file: "audio/test-james-r.mp3" },
-  { id: 8, name: "Jonah", number: "08", file: "audio/test-jonah.mp3" },
-  { id: 9, name: "Logan", number: "09", file: "audio/test-logan.mp3" },
-  { id: 10, name: "Rally", number: "10", file: "audio/test-rally.mp3" },
-  { id: 11, name: "Riichi", number: "11", file: "audio/test-riichi.mp3" },
-  { id: 12, name: "Winston", number: "12", file: "audio/test-winston.mp3" }
+  { id: 1, name: "Andrew", number: "01", file: "audio/andrew-final.mp3" },
+  { id: 2, name: "August", number: "02", file: "temp/announcer/test-august.mp3" },
+  { id: 3, name: "Bear", number: "03", file: "temp/announcer/test-bear.mp3" },
+  { id: 4, name: "Benjamin", number: "04", file: "temp/announcer/test-benjamin.mp3" },
+  { id: 5, name: "Cole", number: "05", file: "temp/announcer/test-cole.mp3" },
+  { id: 6, name: "James P", number: "06", file: "temp/announcer/test-james-p.mp3" },
+  { id: 7, name: "James R", number: "07", file: "temp/announcer/test-james-r.mp3" },
+  { id: 8, name: "Jonah", number: "08", file: "temp/announcer/test-jonah.mp3" },
+  { id: 9, name: "Logan", number: "09", file: "temp/announcer/test-logan.mp3" },
+  { id: 10, name: "Rally", number: "10", file: "temp/announcer/test-rally.mp3" },
+  { id: 11, name: "Riichi", number: "11", file: "temp/announcer/test-riichi.mp3" },
+  { id: 12, name: "Winston", number: "12", file: "temp/announcer/test-winston.mp3" }
   // Add remaining team players here...
 ];
 
-const audio = new Audio();
+const temp/announcer = new temp/announcer();
 let currentPlayingId = null;
 let fadeInterval = null;
 
@@ -36,49 +36,49 @@ roster.forEach(player => {
   grid.appendChild(card);
 });
 
-// 2. Play Audio Logic
+// 2. Play temp/announcer Logic
 function playSong(player) {
   clearInterval(fadeInterval);
-  audio.volume = 1.0;
+  temp/announcer.volume = 1.0;
 
   // If clicking currently playing player, restart track
   if (currentPlayingId === player.id) {
-    audio.currentTime = 0;
-    audio.play();
+    temp/announcer.currentTime = 0;
+    temp/announcer.play();
     return;
   }
 
   currentPlayingId = player.id;
   updateActiveCard();
 
-  audio.src = player.file;
-  audio.play().catch(err => console.error("Audio playback error:", err));
+  temp/announcer.src = player.file;
+  temp/announcer.play().catch(err => console.error("temp/announcer playback error:", err));
 }
 
-// 3. Stop Audio
-function stopAudio() {
+// 3. Stop temp/announcer
+function stoptemp/announcer() {
   clearInterval(fadeInterval);
-  audio.pause();
-  audio.currentTime = 0;
-  audio.volume = 1.0;
+  temp/announcer.pause();
+  temp/announcer.currentTime = 0;
+  temp/announcer.volume = 1.0;
   currentPlayingId = null;
   updateActiveCard();
 }
 
 // 4. Smooth 2-Second Fade Out
-function fadeAudio() {
-  if (!currentPlayingId || audio.paused) return;
+function fadetemp/announcer() {
+  if (!currentPlayingId || temp/announcer.paused) return;
   
   clearInterval(fadeInterval);
   const fadeStepMs = 100;
   const fadeDurationMs = 2000;
-  const volumeStep = audio.volume / (fadeDurationMs / fadeStepMs);
+  const volumeStep = temp/announcer.volume / (fadeDurationMs / fadeStepMs);
 
   fadeInterval = setInterval(() => {
-    if (audio.volume > volumeStep) {
-      audio.volume -= volumeStep;
+    if (temp/announcer.volume > volumeStep) {
+      temp/announcer.volume -= volumeStep;
     } else {
-      stopAudio();
+      stoptemp/announcer();
     }
   }, fadeStepMs);
 }
@@ -95,8 +95,8 @@ function updateActiveCard() {
 }
 
 // Event Listeners
-stopBtn.addEventListener("click", stopAudio);
-fadeBtn.addEventListener("click", fadeAudio);
+stopBtn.addEventListener("click", stoptemp/announcer);
+fadeBtn.addEventListener("click", fadetemp/announcer);
 
 // Register Service Worker for Offline Playback
 if ("serviceWorker" in navigator) {
