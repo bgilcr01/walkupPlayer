@@ -1,14 +1,14 @@
 // --- ROSTER DATA CONFIGURATION ---
 const roster = [
-  { id: 1, name: "Andrew", number: "01", file: "audio/andrew-final.mp3" },
-  { id: 2, name: "August", number: "02", file: "audio/test-august.mp3" },
-  { id: 3, name: "Bear", number: "03", file: "audio/test-bear.mp3" },
-  { id: 4, name: "Benjamin", number: "04", file: "audio/benjamin-final.mp3" },
-  { id: 5, name: "Cole", number: "05", file: "audio/test-cole.mp3" },
+  { id: 1, name: "Andrew", number: "01", file: "audio/final-andrew.mp3" },
+  { id: 2, name: "August", number: "02", file: "audio/final-august.mp3" },
+  { id: 3, name: "Bear", number: "03", file: "audio/final-bear.mp3" },
+  { id: 4, name: "Benjamin", number: "04", file: "audio/final-benjamin.mp3" },
+  { id: 5, name: "Cole", number: "05", file: "audio/final-cole.mp3" },
   { id: 6, name: "James P", number: "06", file: "audio/final-james-p.mp3" },
-  { id: 7, name: "James R", number: "07", file: "audio/test-james-r.mp3" },
+  { id: 7, name: "James R", number: "07", file: "audio/final-james-r.mp3" },
   { id: 8, name: "Jonah", number: "08", file: "audio/final-jonah.mp3" },
-  { id: 9, name: "Logan", number: "09", file: "audio/test-logan.mp3" },
+  { id: 9, name: "Logan", number: "09", file: "audio/final-logan.mp3" },
   { id: 10, name: "Rally", number: "10", file: "audio/final-rally.mp3" },
   { id: 11, name: "Riichi", number: "11", file: "audio/final-riichi.mp3" },
   { id: 12, name: "Winston", number: "12", file: "audio/final-winston.mp3" }
