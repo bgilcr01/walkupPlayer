@@ -9,9 +9,9 @@ const roster = [
   { id: 7, name: "James R", number: "07", file: "audio/test-james-r.mp3" },
   { id: 8, name: "Jonah", number: "08", file: "audio/final-jonah.mp3" },
   { id: 9, name: "Logan", number: "09", file: "audio/test-logan.mp3" },
-  { id: 10, name: "Rally", number: "10", file: "audio/test-rally.mp3" },
-  { id: 11, name: "Riichi", number: "11", file: "audio/test-riichi.mp3" },
-  { id: 12, name: "Winston", number: "12", file: "audio/test-winston.mp3" }
+  { id: 10, name: "Rally", number: "10", file: "audio/final-rally.mp3" },
+  { id: 11, name: "Riichi", number: "11", file: "audio/final-riichi.mp3" },
+  { id: 12, name: "Winston", number: "12", file: "audio/final-winston.mp3" }
   // Add remaining team players here...
 ];
 
