@@ -1,7 +1,7 @@
 // --- ROSTER DATA CONFIGURATION ---
 const roster = [
   { id: 1, name: "Andrew", number: "01", file: "audio/final-andrew.mp3" },
-  { id: 2, name: "August", number: "02", file: "audio/final-august.mp3" },
+  { id: 2, name: "August", number: "02", file: "audio/final-august-2.mp3" },
   { id: 3, name: "Bear", number: "03", file: "audio/final-bear.mp3" },
   { id: 4, name: "Benjamin", number: "04", file: "audio/final-benjamin.mp3" },
   { id: 5, name: "Cole", number: "05", file: "audio/final-cole.mp3" },
