@@ -6,7 +6,7 @@ const roster = [
   { id: 4, name: "Benjamin", number: "04", file: "audio/final-benjamin.mp3" },
   { id: 5, name: "Cole", number: "05", file: "audio/final-cole.mp3" },
   { id: 6, name: "James P", number: "06", file: "audio/final-james-p.mp3" },
-  { id: 7, name: "James R", number: "07", file: "audio/final-james-r.mp3" },
+  { id: 7, name: "James R", number: "07", file: "audio/final-james-r-2.mp3" },
   { id: 8, name: "Jonah", number: "08", file: "audio/final-jonah.mp3" },
   { id: 9, name: "Logan", number: "09", file: "audio/final-logan.mp3" },
   { id: 10, name: "Rally", number: "10", file: "audio/final-rally.mp3" },
@@ -71,7 +71,7 @@ function fadeAudio() {
   
   clearInterval(fadeInterval);
   const fadeStepMs = 100;
-  const fadeDurationMs = 2000;
+  const fadeDurationMs = 1500;
   const volumeStep = audio.volume / (fadeDurationMs / fadeStepMs);
 
   fadeInterval = setInterval(() => {
